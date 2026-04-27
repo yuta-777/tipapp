@@ -1,0 +1,69 @@
+:root {
+    /* Colors - Miyoshi Tone & Manner */
+    --color-bg-base: #121212; /* Sumi black */
+    --color-bg-panel: #1e1e1e; /* Dark ash */
+    --color-text-main: #f0ece1; /* Washi white with slight warmth */
+    --color-text-muted: #8c8c8c;
+    --color-accent-gold: #c7a977; /* Subtle matte gold */
+    --color-accent-gold-hover: #e0ca9f;
+    --color-border: #333333;
+    
+    /* Typography */
+    /* English serif for elegance */
+    --font-en: 'Cormorant Garamond', Georgia, serif;
+    /* Japanese serif for refined WA */
+    --font-jp: 'Noto Serif JP', "Yu Mincho", "YuMincho", serif;
+    
+    /* Spacing & Sizes */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+    
+    --radius-sm: 4px;
+    --radius-md: 8px; /* Slight rounding, not too bubbly */
+    
+    /* Transitions */
+    --trans-fast: 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    font-family: var(--font-en); /* We mix them in CSS */
+    font-size: 16px;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden; /* Fix for iPad web app */
+    -webkit-font-smoothing: antialiased;
+    /* subtle background texture via CSS gradient to mimic urushi/washi depth */
+    background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #121212 100%);
+}
+
+.jp-text {
+    font-family: var(--font-jp);
+}
+
+.en-text {
+    font-family: var(--font-en);
+}
+
+/* Base utility classes */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
